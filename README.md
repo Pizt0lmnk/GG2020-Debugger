@@ -58,6 +58,10 @@ Mutant | Player | Weak; Increased fire damage | Fast; Immune to bit damage
 ## World
 
 ### Inspriation
+The linked artworks belong to their respective owners 
+https://wallpaperaccess.com/full/1810868.jpg
+https://images.hdpictures.me/backgrounds/602x339-science-fiction-city-hd-wallpaper.jpg
+https://i.imgur.com/PMv5IZq.png
 
 ### Levels
 
