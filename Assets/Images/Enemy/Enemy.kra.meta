@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Images/Enemy/Enemy.kra.meta
 guid: 7a296c2dbbcc3423ebb637f10505d4f2
+=======
+guid: 35c5da08c8970c3cebfe2dcfd85ebb3d
+>>>>>>> b497c30e9d723f330a6448c449cf0a60b1caf8aa:Assets/Images/Enemy/Enemy.png.kra.meta
+=======
+guid: fb09f2be0582703e2ad7ab744e86adfa
+>>>>>>> b497c30e9d723f330a6448c449cf0a60b1caf8aa
 DefaultImporter:
   externalObjects: {}
   userData: 
