@@ -59,7 +59,11 @@ Space | Fire selected ability
 
 Type | Abilities | Weaknesses | Strengths
 ------------ | ------------- |------------ | -------------
+<<<<<<< HEAD
+Android | Firearm to shoot bullets | Slow; Increased bit damage | Very agile; Immune to fire damage; Player needs to duck to avoid gunshot damage.
+=======
 Android | Guns to shoot bullets | Slow; Increased bit damage | Very agile; Immune to fire damage; Player needs to duck to avoid gunshot damage.
+>>>>>>> a27af06611a248406409cf8e94f6776d61a06f42
 Mutant | Player | Weak; Increased fire damage | Fast; Immune to bit damage
 
 ## World
@@ -73,10 +77,44 @@ https://i.imgur.com/PMv5IZq.png
 ### Levels
 
 #### Tutorial
+Learn Basics 
 
 ##### Level design (Learning focused)
+1. You start autorunning the game pauses a text appears above the players head "Move | A <-> D"
+2. You run to the right the game continues an event is triggered Androids spawn; You have to run away
+3. A mechanical crate appears the game pauses and a text appears "Jump | Space"; You jump over the box and continue running away;
+4. An Event triggers the Androids start to shoot;
+5. Game pauses text appears "Duck | S"; You dodge the bullet
+6. You run into Stonehenge; Androids are gettin' eliminated.
+7. An elevator lowers the player into the ground
 
 ##### Script
+```
+[START]
+
+Alexei runs away from a group of androids
+
+    Alexei:
+    **heavy breathing** I'm almost there...
+
+Alexei is getting closer to his destination, and sees something strange
+
+    Alexei:
+    What's that?
+
+Alexei gets inside a ring of stones (Stonehenge)
+All of a sudden the androids are getting deactivated
+
+    Alexei:
+    What the heck is going on?!
+
+The floor starts to tremble and lowers itself.
+The Screen fades to black.
+
+[END]
+```
+
+#### Intro
 
 #### Act 1
 Return to your the human enclave to talk with General {HUMAN_LEADER_NAME}.
@@ -85,7 +123,7 @@ Return to your the human enclave to talk with General {HUMAN_LEADER_NAME}.
 
 ##### Script
 ```
-Alexei and J1mb0x walk out out the cave
+Alexei and J1mb0x 
 
     Alexei:
     I feel so powerful
