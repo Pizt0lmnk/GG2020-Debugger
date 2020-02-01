@@ -11,7 +11,7 @@ namespace States
 
         public override void Update(CharacterController2D player)
         {
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 player.TransitionToState(player.PlayerJumpingState);
             }
@@ -22,6 +22,10 @@ namespace States
             else if (player.Movement < 0)
             {
                 player.TransitionToState(player.PlayerMoveLeftState);
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                player.TransitionToState(player.PlayerDuckState);
             }
         }
 
