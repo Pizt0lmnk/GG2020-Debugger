@@ -59,11 +59,7 @@ Space | Fire selected ability
 
 Type | Abilities | Weaknesses | Strengths
 ------------ | ------------- |------------ | -------------
-<<<<<<< HEAD
 Android | Firearm to shoot bullets | Slow; Increased bit damage | Very agile; Immune to fire damage; Player needs to duck to avoid gunshot damage.
-=======
-Android | Guns to shoot bullets | Slow; Increased bit damage | Very agile; Immune to fire damage; Player needs to duck to avoid gunshot damage.
->>>>>>> a27af06611a248406409cf8e94f6776d61a06f42
 Mutant | Player | Weak; Increased fire damage | Fast; Immune to bit damage
 
 ## World
@@ -116,6 +112,25 @@ The Screen fades to black.
 
 #### Intro
 
+##### Level design (Story focused)
+1. The player starts seeing Alexei inside an elevator lowering
+2. The Elevator opens and the player is walking in a room that seems to be a lab
+3. There is all sorts of technical equipment and in the middle of the room a light beam on a podest in front of it a terminal.
+4. The player walks to the terminal above his head a text appears "Interact | F"
+5. You get a closeup to the Terminal with a hint "Type 'help' to list all commands"
+6. The player types help and the list of commands appears "activate J1-mb0-x, {FURTER_COMMANDS}"
+7. As soon the player enters "activate J1-mb0-x" you hear a loud mechanical noise and someone talking
+8. Alexei talks to the J1mb0x
+9. The player moves into the light beam and the transformation process begins
+10. Alexei loses continuousness
+
+##### Script
+```
+Alexei is inside an elevator 
+
+    Alexei:
+    [ ... ]
+```
 #### Act 1
 Return to your the human enclave to talk with General {HUMAN_LEADER_NAME}.
 
