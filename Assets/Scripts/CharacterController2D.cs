@@ -13,15 +13,15 @@ public class CharacterController2D : MonoBehaviour
 	private PlayerBaseState CurrentState { get; set; }
 
 	public float Movement { get; set; }
-	public bool Jump { get; set; }
+	public Rigidbody2D Rigidbody2D { get; set; }
 	public float speed;
 
 	public readonly PlayerMoveRightState PlayerMoveRightState = new PlayerMoveRightState();
 	public readonly PlayerMoveLeftState PlayerMoveLeftState = new PlayerMoveLeftState();
-	public readonly PlayerIdleState IdleState = new PlayerIdleState();
+	public readonly PlayerIdleState PlayerIdleState = new PlayerIdleState();
+	public readonly PlayerJumpState PlayerJumpingState = new PlayerJumpState();
 
 	private Animator _animator;
-	private Rigidbody2D _rigidbody2D;
 	
 	private Vector2 _velocity;
 
@@ -31,8 +31,8 @@ public class CharacterController2D : MonoBehaviour
     private void Start()
     {
 	    _animator = GetComponent<Animator>();
-	    _rigidbody2D = GetComponent<Rigidbody2D>();
-		TransitionToState(IdleState);
+	    Rigidbody2D = GetComponent<Rigidbody2D>();
+		TransitionToState(PlayerIdleState);
 	}
 	
 	private void Update()
@@ -56,8 +56,11 @@ public class CharacterController2D : MonoBehaviour
 		}
 		
 		transform.Translate(_velocity * Time.deltaTime);
+	}
 
-
+	private void OnCollisionEnter2D(Collision2D other)
+	{
+		CurrentState.OnCollisionEnter(this);
 	}
 
 	#endregion

@@ -1,4 +1,6 @@
-﻿namespace States
+﻿using UnityEngine;
+
+namespace States
 {
     public class PlayerIdleState : PlayerBaseState
     {
@@ -9,7 +11,11 @@
 
         public override void Update(CharacterController2D player)
         {
-            if (player.Movement < 0)
+            if (Input.GetButtonDown("Jump"))
+            {
+                player.TransitionToState(player.PlayerJumpingState);
+            }
+            else if (player.Movement < 0)
             {
                 player.TransitionToState(player.PlayerMoveLeftState);
             }
