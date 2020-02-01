@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Events;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class EnemyController : MonoBehaviour
 {
@@ -12,7 +10,6 @@ public class EnemyController : MonoBehaviour
     private Transform _targetTransform;
     public Transform startTransform;
     public Transform endTransform;
-    private UnityEvent unityEvent;
 
     private void Start()
     {
@@ -26,11 +23,11 @@ public class EnemyController : MonoBehaviour
         if (transform.position.x == endTransform.position.x)
         {
             _targetTransform = startTransform;
+            transform.eulerAngles = new Vector3(0, 180, 0); // Flipped
         } else if (transform.position.x == startTransform.position.x)
         {
             _targetTransform = endTransform;
+            transform.eulerAngles = new Vector3(0, 0, 0); // Normal
         }
-        
-        UnityEventTools.RemovePersistentListener(unityEvent, 0);
     }
 }
