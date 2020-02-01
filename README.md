@@ -2,7 +2,7 @@
 2D Game 
 
 ## Topics
-- Sciene Fiction
+- Science Fiction
 - Post Apocalyptic
 - Story driven
 
@@ -12,7 +12,7 @@
 Humans have tried to create an AI named HOPE. This AI was designed to save the World from climate change but HOPE turned and started to destroy nature. Dr. John McCarthy, one of the main creators of HOPE, developed a second but not yet finished AI called J1mb0x. J1mb0x was created as a countermeasure to HOPE. Before Dr. McCarthy died, he hid J1mb0x at a secret place. For decades humans were searching for J1mb0x, with no luck. The faith to save the world as we know it is almost lost, just as human kind is.
 
 ### Main Storyline
-Its the year 2500 human kind is almost extinct. HOPE, an almost omnipotent AI, destroys nature and life to gather more and more ressources to expand its technical empire. Meanwhile HOPEs highly intelligent androids are hunting down the remaining organical creatures.
+Its the year 2500 and human kind is almost extinct. HOPE, an almost omnipotent AI, destroys nature and life to gather more and more resources to expand its technical empire. Meanwhile HOPEs highly intelligent androids are hunting down the remaining organical creatures.
 
 A small enclave of human also known as the rebels are trying to survive in this cruel highly futuristic world. Lead by General Tulkin they are on a hunt for a last hope: J1mb0x an AI hidden by its creator, built to bring back balance between technical progress and Earth. But as the decades go by people are starting to loose their faith that J1mb0x exists.  
 
@@ -37,7 +37,7 @@ Side-Main Character | Best friend of Alexei | x | Not that smart; Funny; Thinks 
 - Right arm and eye are robotic
 - Legs are robotic
 
-#### Abbilities
+#### Abilities
 
 ##### Movement
 Key | Action
@@ -50,16 +50,20 @@ D | Run right
 ##### Combat
 Key | Action
 ------------ | -------------
-Space | Fire selected abbility
-1-9 | Change abbilities 
+Space | Fire selected ability
+1-9 | Change abilities 
 1 | Bits
 2 | Fire
 
 ## Enemies
 
-Type | Abbilities | Weaknesses | Strengths
+Type | Abilities | Weaknesses | Strengths
 ------------ | ------------- |------------ | -------------
+<<<<<<< HEAD
 Android | Firearm to shoot bullets | Slow; Increased bit damage | Very agile; Immune to fire damage; Player needs to duck to avoid gunshot damage.
+=======
+Android | Guns to shoot bullets | Slow; Increased bit damage | Very agile; Immune to fire damage; Player needs to duck to avoid gunshot damage.
+>>>>>>> a27af06611a248406409cf8e94f6776d61a06f42
 Mutant | Player | Weak; Increased fire damage | Fast; Immune to bit damage
 
 ## World
