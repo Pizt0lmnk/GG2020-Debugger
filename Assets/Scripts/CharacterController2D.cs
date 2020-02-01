@@ -18,6 +18,7 @@ public class CharacterController2D : MonoBehaviour
 
 	public readonly PlayerMoveRightState PlayerMoveRightState = new PlayerMoveRightState();
 	public readonly PlayerMoveLeftState PlayerMoveLeftState = new PlayerMoveLeftState();
+	public readonly PlayerDuckState PlayerDuckState = new PlayerDuckState();
 	public readonly PlayerIdleState PlayerIdleState = new PlayerIdleState();
 	public readonly PlayerJumpState PlayerJumpingState = new PlayerJumpState();
 
@@ -38,24 +39,29 @@ public class CharacterController2D : MonoBehaviour
 	private void Update()
 	{
 		CurrentState.Update(this);
-		Movement = Input.GetAxisRaw("Horizontal");
-		
-		float moveInput = Input.GetAxisRaw("Horizontal");
-		
-		float acceleration = 75;
-		
-		float deceleration = 70;
 
-		if (moveInput != 0)
+		if (CurrentState != PlayerDuckState)
 		{
-			_velocity.x = Mathf.MoveTowards(_velocity.x, speed * moveInput, acceleration * Time.deltaTime);
-		}
-		else
-		{
-			_velocity.x = Mathf.MoveTowards(_velocity.x, 0, deceleration * Time.deltaTime);
-		}
+			Movement = Input.GetAxisRaw("Horizontal");
+			
+			float moveInput = Input.GetAxisRaw("Horizontal");
 		
-		transform.Translate(_velocity * Time.deltaTime);
+			float acceleration = 75;
+		
+			float deceleration = 70;
+
+			if (moveInput != 0)
+			{
+				_velocity.x = Mathf.MoveTowards(_velocity.x, speed * moveInput, acceleration * Time.deltaTime);
+			}
+			else
+			{
+				_velocity.x = Mathf.MoveTowards(_velocity.x, 0, deceleration * Time.deltaTime);
+			}
+		
+			transform.Translate(_velocity * Time.deltaTime);
+		}
+
 	}
 
 	private void OnCollisionEnter2D(Collision2D other)
