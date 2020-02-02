@@ -72,6 +72,7 @@ public class CharacterController2D : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+
                 GameObject bulllet = Instantiate(bulletPrefab, gameObject.transform.position + new Vector3(0.5f, 0, 0),
                     Quaternion.identity);
                 Destroy(bulllet.gameObject, 3f);
@@ -79,6 +80,7 @@ public class CharacterController2D : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Q))
             {
+
                 GameObject bulllet = Instantiate(bulletPrefab, gameObject.transform.position + new Vector3(-0.5f, 0, 0),
                     Quaternion.identity);
                 bulllet.transform.Rotate(new Vector3(0, 180, 0));

@@ -11,10 +11,9 @@ public class EnemyController : MonoBehaviour
     public Transform startTransform;
     public Transform endTransform;
     public float enemyHealth = 20f;
+    public AudioSource sound;
     
-
-
-        private void Start()
+    private void Start()
     {
         _targetTransform = endTransform;
     }
@@ -26,11 +25,13 @@ public class EnemyController : MonoBehaviour
         if (transform.position.x == endTransform.position.x)
         {
             _targetTransform = startTransform;
-            transform.eulerAngles = new Vector3(0, 180, 0); // Flipped
+            transform.eulerAngles = new Vector3(0, 180, 0);
+            sound.Play(0);
         } else if (transform.position.x == startTransform.position.x)
         {
             _targetTransform = endTransform;
-            transform.eulerAngles = new Vector3(0, 0, 0); // Normal
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            sound.Play(0);
         }
 
         
