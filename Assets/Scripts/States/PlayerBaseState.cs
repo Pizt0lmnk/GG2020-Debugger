@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace States
 {
     public abstract class PlayerBaseState
@@ -6,6 +8,6 @@ namespace States
 
         public abstract void Update(CharacterController2D player);
         
-        public abstract void OnCollisionEnter(CharacterController2D player);
+        public abstract void OnCollisionEnter(CharacterController2D player, Collision2D other);
     }
 }

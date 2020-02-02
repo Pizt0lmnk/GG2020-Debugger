@@ -18,7 +18,7 @@ public class PlayerDuckState : PlayerBaseState
         }
     }
 
-    public override void OnCollisionEnter(CharacterController2D player)
+    public override void OnCollisionEnter(CharacterController2D player, Collision2D other)
     {
     }
 }
