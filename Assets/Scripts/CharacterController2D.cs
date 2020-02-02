@@ -14,10 +14,10 @@ public class CharacterController2D : MonoBehaviour
     private PlayerBaseState CurrentState { get; set; }
     public float Movement { get; set; }
     public Rigidbody2D Rigidbody2D { get; set; }
-
     public GameObject bulletPrefab;
-
     public float speed;
+    public AudioSource movementSound;
+    public bool movementSoundPlayed;
 
     public readonly PlayerMoveRightState PlayerMoveRightState = new PlayerMoveRightState();
     public readonly PlayerMoveLeftState PlayerMoveLeftState = new PlayerMoveLeftState();
@@ -55,10 +55,17 @@ public class CharacterController2D : MonoBehaviour
 
             if (moveInput != 0)
             {
+                if (!movementSound.isPlaying && !movementSoundPlayed) {
+                    movementSound.Play();
+                    movementSoundPlayed = true;
+                }
+                
                 _velocity.x = Mathf.MoveTowards(_velocity.x, speed * moveInput, acceleration * Time.deltaTime);
             }
             else
             {
+                movementSound.Stop();
+                movementSoundPlayed = false;
                 _velocity.x = Mathf.MoveTowards(_velocity.x, 0, deceleration * Time.deltaTime);
             }
 
