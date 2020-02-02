@@ -33,9 +33,6 @@ public class EnemyController : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
             sound.Play(0);
         }
-
-        
-       
     }
 
     private void OnCollisionEnter2D(Collision2D other)
