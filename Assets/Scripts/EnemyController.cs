@@ -43,6 +43,7 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             enemyHealth--; 
+            Destroy(other.gameObject);
         }
 
         if (enemyHealth <= 0)

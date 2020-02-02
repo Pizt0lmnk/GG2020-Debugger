@@ -8,7 +8,7 @@ namespace States
         {
             player.transform.position = player.originalPos;
             player.TransitionToState(player.PlayerIdleState);
-            player.health++; 
+            player.health++;
         }
         
 
