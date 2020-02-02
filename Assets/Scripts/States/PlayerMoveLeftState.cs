@@ -29,8 +29,17 @@ namespace States
             }
         }
 
-        public override void OnCollisionEnter(CharacterController2D player)
+        public override void OnCollisionEnter(CharacterController2D player, Collision2D other)
         {
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                player.health--;
+            }
+           
+            if (player.health <=0 )
+            {
+                player.TransitionToState(player.PlayerDeadState);
+            }
         }
     }
 }

@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 422058431}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -593,7 +593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee97389afbf6cb039212d52b59b63a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
   speed: 5
+  health: 1
 --- !u!212 &422058434
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4562,7 +4564,7 @@ GameObject:
   - component: {fileID: 2132545698}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4576,7 +4578,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2132545697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9799e6b094b5b4a21ac013a415072cdd, type: 3}
+  m_Script: {fileID: 11500000, guid: 66b65a7803e054b0483059a62307c368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startTransform: {fileID: 480163348}

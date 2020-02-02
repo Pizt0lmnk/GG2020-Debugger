@@ -10,8 +10,11 @@ public class EnemyController : MonoBehaviour
     private Transform _targetTransform;
     public Transform startTransform;
     public Transform endTransform;
+    public float enemyHealth = 20f;
+    
 
-    private void Start()
+
+        private void Start()
     {
         _targetTransform = endTransform;
     }
@@ -29,5 +32,21 @@ public class EnemyController : MonoBehaviour
             _targetTransform = endTransform;
             transform.eulerAngles = new Vector3(0, 0, 0); // Normal
         }
+
+        
+       
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            enemyHealth--; 
+        }
+
+        if (enemyHealth <= 0)
+        {
+            Destroy(gameObject);
+        }   
     }
 }

@@ -18,15 +18,18 @@ public class CharacterController2D : MonoBehaviour
     public GameObject bulletPrefab;
 
     public float speed;
+    public float health = 1f;
 
     public readonly PlayerMoveRightState PlayerMoveRightState = new PlayerMoveRightState();
     public readonly PlayerMoveLeftState PlayerMoveLeftState = new PlayerMoveLeftState();
     public readonly PlayerDuckState PlayerDuckState = new PlayerDuckState();
     public readonly PlayerIdleState PlayerIdleState = new PlayerIdleState();
     public readonly PlayerJumpState PlayerJumpingState = new PlayerJumpState();
+    public readonly PlayerDeadState PlayerDeadState = new PlayerDeadState();
 
     private Animator _animator;
     private Vector2 _velocity;
+    public Vector2 originalPos;
 
     #endregion
 
@@ -35,6 +38,9 @@ public class CharacterController2D : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
+
+        originalPos = new Vector2(transform.position.x, transform.position.y);
+
         Rigidbody2D = GetComponent<Rigidbody2D>();
         TransitionToState(PlayerIdleState);
     }
@@ -66,13 +72,16 @@ public class CharacterController2D : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                GameObject bulllet = Instantiate(bulletPrefab, gameObject.transform.position + new Vector3(0.5f, 0, 0), Quaternion.identity);
+                GameObject bulllet = Instantiate(bulletPrefab, gameObject.transform.position + new Vector3(0.5f, 0, 0),
+                    Quaternion.identity);
                 Destroy(bulllet.gameObject, 3f);
             }
+
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                GameObject bulllet = Instantiate(bulletPrefab, gameObject.transform.position + new Vector3(-0.5f, 0, 0), Quaternion.identity);
-                bulllet.transform.Rotate(new Vector3(0,180,0));
+                GameObject bulllet = Instantiate(bulletPrefab, gameObject.transform.position + new Vector3(-0.5f, 0, 0),
+                    Quaternion.identity);
+                bulllet.transform.Rotate(new Vector3(0, 180, 0));
                 Destroy(bulllet.gameObject, 3f);
             }
         }
@@ -80,7 +89,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        CurrentState.OnCollisionEnter(this);
+        CurrentState.OnCollisionEnter(this, other);
     }
 
     #endregion
