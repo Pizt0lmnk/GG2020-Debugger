@@ -5,7 +5,12 @@ using UnityEngine;
 public class MoveBullet : MonoBehaviour
 {
     private Vector2 _velocity;
+    public AudioSource sound; 
 
+    void Start()
+    {
+        sound.Play(0);
+    }
     // Update is called once per frame
     void Update()
     {

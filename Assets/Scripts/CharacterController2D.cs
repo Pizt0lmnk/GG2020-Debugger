@@ -66,14 +66,16 @@ public class CharacterController2D : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                GameObject bulllet = Instantiate(bulletPrefab, gameObject.transform.position + new Vector3(0.5f, 0, 0), Quaternion.identity);
-                Destroy(bulllet.gameObject, 3f);
+                GameObject bullet = Instantiate(bulletPrefab, gameObject.transform.position + new Vector3(0.5f, 0, 0), Quaternion.identity);
+                bullet.SetActive(true);
+                Destroy(bullet.gameObject, 3f);
             }
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                GameObject bulllet = Instantiate(bulletPrefab, gameObject.transform.position + new Vector3(-0.5f, 0, 0), Quaternion.identity);
-                bulllet.transform.Rotate(new Vector3(0,180,0));
-                Destroy(bulllet.gameObject, 3f);
+                GameObject bullet = Instantiate(bulletPrefab, gameObject.transform.position + new Vector3(-0.5f, 0, 0), Quaternion.identity);
+                bullet.SetActive(true);
+                bullet.transform.Rotate(new Vector3(0,180,0));
+                Destroy(bullet.gameObject, 3f);
             }
         }
     }
