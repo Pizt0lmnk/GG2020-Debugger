@@ -14,7 +14,7 @@ public class MoveBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _velocity.x = Mathf.MoveTowards(_velocity.x, 5, 75 * Time.deltaTime);
+        _velocity.x = Mathf.MoveTowards(_velocity.x, 10, 75 * Time.deltaTime);
         transform.Translate(_velocity * Time.deltaTime);
     }
 }
